@@ -129,12 +129,16 @@ Configure pihole-updatelists
 sudo nano /etc/pihole-updatelists.conf
 ```
 
-Adlists:
+Blacklists (exact):
 - Very Safe - No false positive (What I Recommend): `https://v.firebog.net/hosts/lists.php?type=tick`
 - Somewhat Safe - Rare false positives (What I use): `https://v.firebog.net/hosts/lists.php?type=nocross`
 
-Blocklist:
-- Blocks TikTok domains `https://raw.githubusercontent.com/llacb47/mischosts/master/social/tiktok-regex.list`
+Blacklists (regex):
+- Some false positives, whitelist recommended: `https://raw.githubusercontent.com/mmotti/pihole-regex/master/regex.list`
+- Blocks TikTok domains: `https://raw.githubusercontent.com/llacb47/mischosts/master/social/tiktok-regex.list`
+
+Whitelist (exact):
+- Recommended Whitelist: `https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt`
 
 Update pi-hole lists
 
