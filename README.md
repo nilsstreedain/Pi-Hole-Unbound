@@ -206,7 +206,7 @@ sudo chmod +x /etc/cron.weekly/updatepihole
 Create a monthly cron job called updateroothints
 
 ```bash
-sudo nano /etc/cron.weekly/updateroothints
+sudo nano /etc/cron.monthly/updateroothints
 ```
 
 Paste the following:
