@@ -5,6 +5,15 @@ Before getting started:
 - Connect your Raspberry Pi (or whatever computer you're using) to your network
 - ssh in the Pi
 
+## Update Raspberry Pi
+```bash
+sudo apt update
+```
+
+```bash
+sudo apt full-upgrade
+```
+
 ## Setup Pi-Hole
 
 Install Pi-Hole and follow the steps in the user interface
