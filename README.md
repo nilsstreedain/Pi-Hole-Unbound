@@ -6,12 +6,27 @@ Before getting started:
 - ssh in the Pi
 
 ## Update Raspberry Pi
+
 ```bash
 sudo apt update
 ```
 
 ```bash
 sudo apt full-upgrade
+```
+
+## Change Raspberry Pi Password
+
+```bash
+passwd
+```
+
+### Optional:
+
+Change Raspberry Pi Hostname (raspi-config > System Options > Hostname)
+
+```bash
+sudo raspi-config
 ```
 
 ## Setup Pi-Hole
