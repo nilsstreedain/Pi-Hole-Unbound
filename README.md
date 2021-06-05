@@ -129,6 +129,9 @@ Install pihole-updatelists and it's dependacies
 
 ```bash
 sudo apt-get install php-cli php-sqlite3 php-intl php-curl
+```
+
+```bash
 wget -O - https://raw.githubusercontent.com/jacklul/pihole-updatelists/master/install.sh | sudo bash
 ```
 
