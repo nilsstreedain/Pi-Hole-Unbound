@@ -122,13 +122,15 @@ server:
     private-address: fe80::/10
 ```
 
-Unbound can come with a service enabled by default that uses 127.0.0.1 instead of 127.0.0.1#5335 when writing into a file that is used for local services. To disable it, do the following:
+<!-- Unbound can come with a service enabled by default that uses 127.0.0.1 instead of 127.0.0.1#5335 when writing into a file that is used for local services. To disable it, do the following:
 
 ```bash
 sudo systemctl disable unbound-resolvconf.service
 sudo systemctl stop unbound-resolvconf.service
 sudo systemctl restart dhcpcd
 ```
+
+-->
 
 Finally, restart unbound
 
