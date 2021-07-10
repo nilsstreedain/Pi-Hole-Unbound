@@ -23,11 +23,13 @@ passwd
 
 ### Optional:
 
-Change Raspberry Pi Hostname (raspi-config > System Options > Hostname)
-
 ```bash
 sudo raspi-config
 ```
+
+Set Raspberry Pi Country (raspi-config > Localisation Options > WLAN Country)
+
+Change Raspberry Pi Hostname (raspi-config > System Options > Hostname)
 
 ## Setup Pi-Hole
 
@@ -140,6 +142,29 @@ sudo service unbound restart
 
 Use the web admin panel to change the Pi-Hole upstream DNS to 127.0.0.1#5335 for IPv4 and ::1#5335 for IPv6
 
+### Update root.hints monthly (Not Really Needed)
+
+Create a monthly cron job called updateroothints
+
+```bash
+sudo nano /etc/cron.monthly/updateroothints
+```
+
+Paste the following:
+
+```bash
+#!/bin/sh
+
+# update unbound root list
+wget https://www.internic.net/domain/named.root -qO- | sudo tee /var/lib/unbound/root.hints
+```
+
+Make it executable
+
+```bash
+sudo chmod +x /etc/cron.monthly/updateroothints
+```
+
 ## Setup Auto-Updating BlockLists
 
 Install pihole-updatelists and it's dependacies
@@ -198,7 +223,7 @@ Make it executable
 sudo chmod +x /etc/cron.daily/updatelists
 ```
 
-### Update pi-hole itself weekly (Not Recommended)
+<!-- ### Update pi-hole itself weekly (Not Recommended)
 
 Create a weekly cron job called updatepihole
 
@@ -221,25 +246,4 @@ Make it executable
 sudo chmod +x /etc/cron.weekly/updatepihole
 ```
 
-### Update root.hints monthly (Not Really Needed)
-
-Create a monthly cron job called updateroothints
-
-```bash
-sudo nano /etc/cron.monthly/updateroothints
-```
-
-Paste the following:
-
-```bash
-#!/bin/sh
-
-# update unbound root list
-wget https://www.internic.net/domain/named.root -qO- | sudo tee /var/lib/unbound/root.hints
-```
-
-Make it executable
-
-```bash
-sudo chmod +x /etc/cron.monthly/updateroothints
-```
+-->
